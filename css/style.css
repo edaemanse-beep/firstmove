@@ -71,7 +71,7 @@ a { color: inherit; }
 .typing.done::after { display: none; }
 @keyframes blink { 50% { opacity: 0; } }
 .hero-sub { color: var(--muted); margin: 0 0 28px; }
-.hero-photo img { width: 100%; max-width: 380px; margin: 0 auto; border-radius: var(--radius) var(--radius) 0 0; filter: grayscale(1) contrast(1.05); }
+.hero-photo img { width: 100%; max-width: 400px; margin: 0 auto; border-radius: var(--radius) var(--radius) 0 0; }
 .giant {
   position: absolute; left: 0; right: 0; bottom: -0.14em; z-index: 1; margin: 0;
   text-align: center; font-weight: 900; line-height: 1; letter-spacing: -0.04em;
