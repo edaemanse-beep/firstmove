@@ -116,7 +116,7 @@ a { color: inherit; }
 .card:hover { transform: translateY(-8px) rotate(-0.5deg); box-shadow: var(--shadow); }
 .card h3 { margin: 16px 0 4px; font-size: 1.3rem; }
 .card p { margin: 0; color: var(--muted); }
-.card-img { aspect-ratio: 4 / 3; width: 100%; }
+.card-img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; }
 .placeholder {
   display: flex; align-items: center; justify-content: center; text-align: center;
   background: var(--gray); color: var(--muted); font-weight: 500; border: 2px dashed #A8A8A3;
