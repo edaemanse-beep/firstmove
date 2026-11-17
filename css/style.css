@@ -212,7 +212,7 @@ a { color: inherit; }
 @keyframes guide-wave { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.9); opacity: 0; } }
 
 .guide-pop {
-  position: relative; width: 260px; max-width: calc(100vw - 32px); padding: 20px 16px 16px;
+  position: relative; width: 320px; max-width: calc(100vw - 32px); padding: 20px 16px 16px;
   background: #fff; color: var(--black); border: 2px solid var(--black); border-radius: 8px;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3); animation: guide-pop .35s ease;
 }
@@ -222,7 +222,11 @@ a { color: inherit; }
   background: #fff; border-right: 2px solid var(--black); border-bottom: 2px solid var(--black); transform: rotate(45deg);
 }
 @keyframes guide-pop { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
-.guide-title { margin: 0 36px 12px 0; font-weight: 900; font-size: 1.1rem; line-height: 1.4; }
+.guide-intro { margin: 0 28px 14px 0; font-size: 1rem; line-height: 1.6; }
+.guide-intro p { margin: 0 0 8px; }
+.guide-intro p:last-child { margin-bottom: 0; }
+.guide-hello { font-weight: 700; }
+.guide-title { margin: 0 0 10px; padding-top: 12px; border-top: 1px solid var(--gray-line); font-weight: 900; font-size: 1.05rem; line-height: 1.4; }
 .guide-close {
   position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; border: 0; background: transparent;
   font-size: 1.2rem; font-weight: 700; cursor: pointer; border-radius: 50%;
