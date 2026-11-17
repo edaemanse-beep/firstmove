@@ -193,3 +193,49 @@ a { color: inherit; }
   .js .reveal { opacity: 1; transform: none; }
   .typing::after { display: none; }
 }
+
+/* ===== 플로팅 안내원 (오른쪽 아래 고정) ===== */
+.guide { position: fixed; right: 16px; bottom: 16px; z-index: 60; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.guide-btn {
+  position: relative; width: 76px; height: 76px; padding: 0; border: 3px solid var(--black); border-radius: 50%;
+  background: #fff; cursor: pointer; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  animation: guide-float 3s ease-in-out infinite;
+}
+.guide-btn img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.guide-btn:hover { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); }
+.guide-wave {
+  position: absolute; inset: -3px; border-radius: 50%; border: 2px solid rgba(17, 17, 17, 0.45);
+  animation: guide-wave 2.6s ease-out infinite; pointer-events: none;
+}
+.guide-wave-2 { animation-delay: 1.3s; }
+@keyframes guide-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes guide-wave { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.9); opacity: 0; } }
+
+.guide-pop {
+  position: relative; width: 260px; max-width: calc(100vw - 32px); padding: 20px 16px 16px;
+  background: #fff; color: var(--black); border: 2px solid var(--black); border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3); animation: guide-pop .35s ease;
+}
+.guide-pop[hidden] { display: none; }
+.guide-pop::after {
+  content: ""; position: absolute; right: 28px; bottom: -11px; width: 18px; height: 18px;
+  background: #fff; border-right: 2px solid var(--black); border-bottom: 2px solid var(--black); transform: rotate(45deg);
+}
+@keyframes guide-pop { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
+.guide-title { margin: 0 36px 12px 0; font-weight: 900; font-size: 1.1rem; line-height: 1.4; }
+.guide-close {
+  position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; border: 0; background: transparent;
+  font-size: 1.2rem; font-weight: 700; cursor: pointer; border-radius: 50%;
+}
+.guide-close:hover { background: var(--gray); }
+.guide-menu { display: flex; flex-direction: column; gap: 8px; }
+.guide-menu a {
+  display: flex; align-items: center; min-height: 52px; padding: 8px 14px; border: 2px solid var(--black); border-radius: 6px;
+  font-weight: 700; text-decoration: none; transition: background .3s, color .3s, transform .3s;
+}
+.guide-menu a:hover, .guide-menu a:focus-visible { background: var(--black); color: #fff; transform: translateX(-4px); }
+
+@media (max-width: 768px) {
+  .guide { right: 12px; bottom: 12px; }
+  .guide-btn { width: 68px; height: 68px; }
+}

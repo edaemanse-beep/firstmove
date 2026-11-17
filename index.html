@@ -175,6 +175,24 @@
     </div>
   </footer>
 
+  <!-- 플로팅 안내원: 오른쪽 아래에 고정 -->
+  <div class="guide" id="guide">
+    <div class="guide-pop" id="guidePop" role="dialog" aria-label="안내 메뉴" hidden>
+      <button class="guide-close" id="guideClose" type="button" aria-label="안내 메뉴 닫기">✕</button>
+      <p class="guide-title">무엇을 안내해 드릴까요?</p>
+      <nav class="guide-menu" aria-label="안내 메뉴">
+        <a href="#top">👋 자기소개</a>
+        <a href="#products">🧩 교구 소개</a>
+        <a href="#contact">📞 연락하기</a>
+      </nav>
+    </div>
+    <button class="guide-btn" id="guideBtn" type="button" aria-label="안내원에게 물어보기" aria-expanded="false" aria-controls="guidePop">
+      <span class="guide-wave" aria-hidden="true"></span>
+      <span class="guide-wave guide-wave-2" aria-hidden="true"></span>
+      <img src="images/avatar.webp" width="280" height="273" alt="안내원 아바타: 웃고 있는 정장 차림의 남성 일러스트">
+    </button>
+  </div>
+
   <script src="js/main.js" defer></script>
 </body>
 </html>

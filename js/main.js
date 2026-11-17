@@ -100,3 +100,41 @@
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
+
+// 7. 플로팅 안내원 (오른쪽 아래 아바타 + 팝업 메뉴)
+(function () {
+  'use strict';
+  var btn = document.getElementById('guideBtn');
+  var pop = document.getElementById('guidePop');
+  var closeBtn = document.getElementById('guideClose');
+  if (!btn || !pop) return;
+
+  function openPop() {
+    pop.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    var first = pop.querySelector('.guide-menu a');
+    if (first) first.focus();
+  }
+  function closePop(returnFocus) {
+    pop.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    if (returnFocus) btn.focus();
+  }
+
+  btn.addEventListener('click', function () {
+    if (pop.hidden) openPop(); else closePop(false);
+  });
+  if (closeBtn) closeBtn.addEventListener('click', function () { closePop(true); });
+
+  // 메뉴를 누르면 팝업을 닫고 해당 섹션으로 부드럽게 이동 (이동은 CSS scroll-behavior가 담당)
+  pop.addEventListener('click', function (e) {
+    if (e.target.closest('.guide-menu a')) closePop(false);
+  });
+  // 바깥을 누르거나 Esc를 누르면 닫기
+  document.addEventListener('click', function (e) {
+    if (!pop.hidden && !e.target.closest('#guide')) closePop(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !pop.hidden) closePop(true);
+  });
+})();
